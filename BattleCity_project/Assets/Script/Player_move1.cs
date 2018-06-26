@@ -69,6 +69,7 @@ public class Player_move1 : MonoBehaviour {
             }
 
         }
+        
 
 
     }
