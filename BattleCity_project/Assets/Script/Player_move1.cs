@@ -9,8 +9,9 @@ public class Player_move1 : MonoBehaviour
     public Vector2 SPEED = new Vector2(0.05f, 0.05f);
     Vector2 Position;
     public GameObject P_Bullet;
-
-
+    public int X_Dintdirection;
+    public int Y_Dintdirection;
+    public float Z_Dintdirection;
     // Use this for initialization
     void Start()
     {
@@ -38,6 +39,11 @@ public class Player_move1 : MonoBehaviour
                 {
                 //transform.Rotate(new Vector3(0, 0, -90));
                 this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
+                //transform.eulerAngles = new Vector3(X_Dintdirection, Y_Dintdirection, Z_Dintdirection);
+                //print(transform.eulerAngles.z);
+                Z_Dintdirection = transform.eulerAngles.z;
+                Debug.Log(Z_Dintdirection);
+               
                 }
                 Position.x -= SPEED.x;
                 transform.position = Position;
@@ -53,7 +59,10 @@ public class Player_move1 : MonoBehaviour
                 {
                    //transform.Rotate(new Vector3(0, 0, 90));
                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 270.0f);
-                }
+                //print(transform.eulerAngles.z);
+                Z_Dintdirection = transform.eulerAngles.z;
+                Debug.Log(Z_Dintdirection);
+            }
             }
             if (Input.GetKey(KeyCode.W))
             {
@@ -63,6 +72,10 @@ public class Player_move1 : MonoBehaviour
                 {
                 //transform.Rotate(new Vector3(0, 0, -180));
                 this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                // print(transform.eulerAngles.z);
+                Z_Dintdirection = transform.eulerAngles.z;
+                Debug.Log(Z_Dintdirection);
+
             }
             }
 
@@ -73,6 +86,9 @@ public class Player_move1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S))
                 {
                 // transform.Rotate(new Vector3(0, 0, 180));
+                // print(transform.eulerAngles.z);
+                Z_Dintdirection = transform.eulerAngles.z;
+                Debug.Log(Z_Dintdirection);
                 this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 180.0f);
                 }
 
