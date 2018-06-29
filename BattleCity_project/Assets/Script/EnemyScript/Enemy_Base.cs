@@ -14,7 +14,7 @@ public class Enemy_Base : MonoBehaviour
     public const int VECTOR_LEFT = 4;   //左向き
 
     //変数の宣言
-    public Vector3 enemyPosition; //敵戦車の位置
+    protected Vector3 enemyPosition; //敵戦車の位置
 
     public int rotationVector;  //敵戦車の向き
     public float enemySpeed;    //スピード

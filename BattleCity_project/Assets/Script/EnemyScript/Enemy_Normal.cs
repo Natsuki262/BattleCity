@@ -8,8 +8,14 @@ using UnityEngine;
 public class Enemy_Normal : Enemy_Base
 {
 
-	// Use this for initialization
-	IEnumerator Start ()
+    private void Awake()
+    {
+        //初期位置の設定
+        enemyPosition = new Vector3(0.0f, 4.5f, 0.0f);
+    }
+
+    // Use this for initialization
+    IEnumerator Start ()
     {
         rotationVector = VECTOR_DOWN; //最初は下向き
         enemySpeed = 0.03f; //スピードの設定
