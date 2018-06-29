@@ -143,6 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SPEED: {x: 0.03, y: 0.05}
   P_Bullet: {fileID: 1315982770602090, guid: 9aabb1f334fed764bb16ae33a64f9916, type: 2}
+  X_Dintdirection: 0
+  Y_Dintdirection: 0
+  Z_Dintdirection: 0
+  speed: 10
 --- !u!212 &1519179600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -306,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1915063077}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0030000005, y: 0.036000013, z: 0}
+  m_LocalPosition: {x: 0.0030000005, y: 0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1519179601}

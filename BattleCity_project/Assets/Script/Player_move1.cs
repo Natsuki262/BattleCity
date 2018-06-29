@@ -99,13 +99,11 @@ public class Player_move1 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(P_Bullet, transform.position, Quaternion.identity);
+            Instantiate(P_Bullet, transform.position,transform.rotation);
             GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
             if (Z_Dintdirection==90)
             {
-                //Instantiate(P_Bullet, transform.position, Quaternion.identity);
-               //GameObject P_Bullet=GameObject.Instantiate(P_Bullet)as GameObject;
-
+               
             }
         }
             
