@@ -12,6 +12,7 @@ public class Player_move1 : MonoBehaviour
     public int X_Dintdirection;
     public int Y_Dintdirection;
     public float Z_Dintdirection;
+    public int speed = 10;
     // Use this for initialization
     void Start()
     {
@@ -94,15 +95,24 @@ public class Player_move1 : MonoBehaviour
 
             }
         }
-        void BulletShot()
+       void BulletShot()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(P_Bullet, transform.position, Quaternion.identity);
+            GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
+            if (Z_Dintdirection==90)
+            {
+                //Instantiate(P_Bullet, transform.position, Quaternion.identity);
+               //GameObject P_Bullet=GameObject.Instantiate(P_Bullet)as GameObject;
+
+            }
+        }
+            
         }
     }
 
 
 
 
- } 
+ 
