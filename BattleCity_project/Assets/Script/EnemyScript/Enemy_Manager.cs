@@ -24,12 +24,40 @@ public class Enemy_Manager : MonoBehaviour
 	void Start ()
     {
         numEnemy = 0;
-        elapsedTime = 0f;
+        maxEntryNum =4;
+        elapsedTime = 0.0f;
+        nextEntryTime = 3.0f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+		//画面上に出現する最大数を超えたら何もしない
+        if(numEnemy >= maxEntryNum)
+        {
+            return;
+        }
+
+        //経過時間を足す
+        elapsedTime += Time.deltaTime;
+
+        //経過時間が経ったら敵出現
+        if(elapsedTime > nextEntryTime)
+        {
+            elapsedTime = 0.0f;
+
+            EnemyEntry();
+        }
 	}
+
+    //----------------------------------------
+    // 敵を指定位置から出現させる
+    //----------------------------------------
+    void EnemyEntry()
+    {
+        GameObject.Instantiate(enemySet[0], transform.position, transform.rotation);
+
+        numEnemy++;
+        elapsedTime = 0.0f;
+    }
 }

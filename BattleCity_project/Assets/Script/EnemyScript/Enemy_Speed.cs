@@ -1,27 +1,25 @@
 ﻿/******************************
-   普通敵戦車の処理
+   装甲車の処理
 *******************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Normal : Enemy_Base
+public class Enemy_Speed : Enemy_Base
 {
     void Awake()
     {
         //初期位置の設定
-        enemyPosition = new Vector3(0.0f, 4.5f, 0.0f);
+        enemyPosition = new Vector3(-5.0f, 4.5f, 0.0f);
     }
 
     // Use this for initialization
-    IEnumerator Start ()
+    IEnumerator Start()
     {
-        rotationVector = VECTOR_DOWN; //最初は下向き
-
-        enemySpeed = 0.03f; //スピードの設定
+        enemySpeed = 0.05f; //スピードの設定
 
         timeOut = Random.Range(1.0f, 3.0f); //終了時間の設定
-        
+
 
         while (true)
         {
@@ -29,10 +27,10 @@ public class Enemy_Normal : Enemy_Base
             Instantiate(bltObj, transform.position, transform.rotation);
             yield return new WaitForSeconds(2.0f);
         }
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         //経過時間を取得
         timeElapsed += Time.deltaTime;
@@ -88,4 +86,3 @@ public class Enemy_Normal : Enemy_Base
         transform.position = enemyPosition;
     }
 }
-

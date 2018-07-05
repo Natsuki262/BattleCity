@@ -16,13 +16,31 @@ public class Enemy_Base : MonoBehaviour
     //変数の宣言
     protected Vector3 enemyPosition; //敵戦車の位置
 
+    public GameObject bltObj; //弾のゲームオブジェクト
+    public GameObject eBullet;
+
     public int rotationVector;  //敵戦車の向き
     public float enemySpeed;    //スピード
 
-    public float timeOut;      //カウント終了時間
-    public float timeElapsed;  //カウント経過時間
+    public float timeOut;      //方向転換終了時間
+    public float timeElapsed;  //方向転換経過時間
 
-    public GameObject bltObj; //弾のゲームオブジェクト
+    public float nextBulletTime;     //次の弾発射時間
+    public float elapsedBulletTime;  //弾発射経過時間
+
+    // Use this for initialization
+    void Start()
+    { 
+
+        nextBulletTime = 3.0f;
+        elapsedBulletTime = 0.0f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        elapsedBulletTime += Time.deltaTime;
+    }
 
 
     //-----------------------------------------
@@ -59,7 +77,5 @@ public class Enemy_Base : MonoBehaviour
             default:
                 break;
         }
-
-        //transform.position = enemyPosition;
     }
 }

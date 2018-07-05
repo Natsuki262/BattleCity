@@ -7,11 +7,16 @@ public class Enemy_Bullet : MonoBehaviour
     GameObject eMove;
     Enemy_Normal emScript;
 
+    //public GameObject eNormal;
+    //float enemyVector;
+
 	// Use this for initialization
 	void Start ()
     {
         eMove = GameObject.Find("Enemy_Normal");
         emScript = eMove.GetComponent<Enemy_Normal>();
+
+        //enemyVector = eNormal.transform.localRotation.z;
 
         if(emScript.rotationVector == 1)
         {
