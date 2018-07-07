@@ -40,7 +40,8 @@ public class Player_move1 : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, transform.position, transform.rotation);
+           GameObject obj=Instantiate(bullet, transform.position, transform.rotation);
+            obj.GetComponent<Bullet>().playerRotation = transform.forward;
         }
 
         Player_Move();
@@ -120,7 +121,7 @@ public class Player_move1 : MonoBehaviour
         {
             Instantiate(bullet, transform.position, transform.rotation);
             //GetComponent<Rigidbody2D>().velocity = transform.up.normalized * speed;
-
+            bullet.GetComponent<Bullet>().playerRotation= transform.forward;
         }
 
     }
